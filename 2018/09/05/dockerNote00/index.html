@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="记录">
 <meta property="og:description" content="关于Docker笔记记录下个人学习Docker的使用和配置，均为入门级别，如有疏漏和错误的地方请指正。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T07:30:51.710Z">
+<meta property="og:updated_time" content="2018-09-05T07:36:21.769Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker笔记-安装配置">
 <meta name="twitter:description" content="关于Docker笔记记录下个人学习Docker的使用和配置，均为入门级别，如有疏漏和错误的地方请指正。">
@@ -325,7 +325,7 @@
 		      
 			<span class="post-meta-item-text">更新于&#58;</span>
 		      
-		      <time title="更新于" itemprop="dateModified" datetime="2018-09-05T15:30:51+08:00">
+		      <time title="更新于" itemprop="dateModified" datetime="2018-09-05T15:36:21+08:00">
 			2018-09-05
 		      </time>
 		    
@@ -410,13 +410,14 @@
 	      
 		<h3 id="关于Docker笔记"><a href="#关于Docker笔记" class="headerlink" title="关于Docker笔记"></a>关于Docker笔记</h3><p>记录下个人学习Docker的使用和配置，均为入门级别，如有疏漏和错误的地方请指正。</p>
 <a id="more"></a>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h4 id="根据要求安装相应内核的linux系统，本次测试试用了CentOS7-并将yum源更换为阿里源"><a href="#根据要求安装相应内核的linux系统，本次测试试用了CentOS7-并将yum源更换为阿里源" class="headerlink" title="根据要求安装相应内核的linux系统，本次测试试用了CentOS7,并将yum源更换为阿里源"></a>根据要求安装相应内核的linux系统，本次测试试用了CentOS7,并将yum源更换为阿里源</h4><pre><code>[root@gd ~]# uname -a\
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h4 id="根据要求安装相应内核的linux系统，本次测试试用了CentOS7-并将yum源更换为阿里源"><a href="#根据要求安装相应内核的linux系统，本次测试试用了CentOS7-并将yum源更换为阿里源" class="headerlink" title="根据要求安装相应内核的linux系统，本次测试试用了CentOS7,并将yum源更换为阿里源"></a>根据要求安装相应内核的linux系统，本次测试试用了CentOS7,并将yum源更换为阿里源</h4><pre><code>[root@gd ~]# uname -a
 Linux gd 3.10.0-123.el7.x86_64 #1 SMP Mon Jun 30 12:09:22 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
 </code></pre><h4 id="通过yum安装docker"><a href="#通过yum安装docker" class="headerlink" title="通过yum安装docker"></a>通过yum安装docker</h4><pre><code>[g@runoob ~]# sudo yum -y install docker-io
 </code></pre><h4 id="启动-Docker-后台服务"><a href="#启动-Docker-后台服务" class="headerlink" title="启动 Docker 后台服务"></a>启动 Docker 后台服务</h4><pre><code>[g@gd CentOS 7 x86_64]$ sudo service docker start
 Redirecting to /bin/systemctl start docker.service
-</code></pre><h4 id="镜像加速"><a href="#镜像加速" class="headerlink" title="镜像加速"></a>镜像加速</h4><p>国内后续拉取 Docker 镜像十分缓慢，我们可以需要配置加速器来解决，我使用的是网易的镜像地址：<a href="http://hub-mirror.c.163.com。" target="_blank" rel="noopener">http://hub-mirror.c.163.com。</a></p>
-<p>新版的 Docker 使用 /etc/docker/daemon.json（Linux） 或者 %programdata%\docker\config\daemon.json（Windows） 来配置 Daemon。</p>
+</code></pre><h4 id="镜像加速"><a href="#镜像加速" class="headerlink" title="镜像加速"></a>镜像加速</h4><p>国内后续拉取 Docker 镜像十分缓慢，我们可以需要配置加速器来解决，我使用的是网易的镜像地址：</p>
+<pre><code>http://hub-mirror.c.163.com。
+</code></pre><p>新版的Docker使用 etc/docker/daemon.json（Linux）或者%programdata%\docker\config\daemon.json（Windows）来配置 Daemon。</p>
 <p>请在该配置文件中加入（没有该文件的话，请先建一个）：</p>
 <pre><code>{
   &quot;registry-mirrors&quot;: [&quot;http://hub-mirror.c.163.com&quot;]
@@ -434,8 +435,7 @@ $ sudo systemctl restart docker
 </code></pre><h4 id="运行一个web应用"><a href="#运行一个web应用" class="headerlink" title="运行一个web应用"></a>运行一个web应用</h4><p>前面我们运行的容器并没有一些什么特别的用处。接下来让我们尝试使用 docker 构建一个 web 应用程序。我们将在docker容器中运行一个 Python Flask 应用来运行一个web应用。</p>
 <pre><code>[root@gd yum.repos.d]# docker pull training/webapp
 [root@gd yum.repos.d]# docker run -d -P training/webapp python app.py
-</code></pre><p>-d:让容器在后台运行。</p>
-<p>-P:将容器内部使用的网络端口映射到我们使用的主机上</p>
+</code></pre><p>-d:让容器在后台运行。<br>-P:将容器内部使用的网络端口映射到我们使用的主机上</p>
 <p>使用 docker ps 来查看我们正在运行的容器</p>
 <pre><code>[root@gd yum.repos.d]# docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS              PORTS                     NAMES
