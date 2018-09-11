@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="记录">
 <meta property="og:description" content="关于Flask笔记 个人Flask学习笔记，初步学习下Flask。笔记内容整理自：  O‘REILLY系列图书：《Flask Web开发：基于Python的Web应用开发实战》 网上查询及搜集">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-11T07:06:03.317Z">
+<meta property="og:updated_time" content="2018-09-11T07:11:11.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flask Web开发笔记-程序的基本结构">
 <meta name="twitter:description" content="关于Flask笔记 个人Flask学习笔记，初步学习下Flask。笔记内容整理自：  O‘REILLY系列图书：《Flask Web开发：基于Python的Web应用开发实战》 网上查询及搜集">
@@ -335,7 +335,7 @@
 		      
 			<span class="post-meta-item-text">更新于&#58;</span>
 		      
-		      <time title="更新于" itemprop="dateModified" datetime="2018-09-11T15:06:03+08:00">
+		      <time title="更新于" itemprop="dateModified" datetime="2018-09-11T15:11:11+08:00">
 			2018-09-11
 		      </time>
 		    
@@ -412,11 +412,13 @@
 <ul>
 <li>O‘REILLY系列图书：《Flask Web开发：基于Python的Web应用开发实战》</li>
 <li>网上查询及搜集<a id="more"></a>
-<h2 id="2-1初始化"><a href="#2-1初始化" class="headerlink" title="2.1初始化"></a>2.1初始化</h2>  from flask import Flask<br>  app = Flask(<strong>name</strong>)</li>
+</li>
 </ul>
-<h2 id="2-2路由和视图函数"><a href="#2-2路由和视图函数" class="headerlink" title="2.2路由和视图函数"></a>2.2路由和视图函数</h2><p>使用程序实例提供的app.route修饰器，把修饰的函数注册为路由</p>
-<pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'&lt;h1&gt;Hello World&lt;/h1&gt;'</span></span><br></pre></td></tr></table></figure>
-</code></pre><p>在route修饰器中使用特殊的句法，实现动态URL</p>
+<h2 id="2-1初始化"><a href="#2-1初始化" class="headerlink" title="2.1初始化"></a>2.1初始化</h2><pre><code>from flask import Flask
+app = Flask(__name__)
+</code></pre><h2 id="2-2路由和视图函数"><a href="#2-2路由和视图函数" class="headerlink" title="2.2路由和视图函数"></a>2.2路由和视图函数</h2><p>使用程序实例提供的app.route修饰器，把修饰的函数注册为路由</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'&lt;h1&gt;Hello World&lt;/h1&gt;'</span></span><br></pre></td></tr></table></figure>
+<p>在route修饰器中使用特殊的句法，实现动态URL</p>
 <pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/user/&lt;name&gt;')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">user</span><span class="params">(name)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'&lt;h1&gt;Hello ,%s&lt;/h1&gt;'</span> % name</span><br></pre></td></tr></table></figure>
 </code></pre><h2 id="2-3启动服务器"><a href="#2-3启动服务器" class="headerlink" title="2.3启动服务器"></a>2.3启动服务器</h2><pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(debug=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
 </code></pre><h2 id="2-4完整的程序"><a href="#2-4完整的程序" class="headerlink" title="2.4完整的程序"></a>2.4完整的程序</h2><pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># app.before_first_request(print(123))</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hello World!'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/user/&lt;name&gt;')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">user</span><span class="params">(name)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'&lt;h1&gt;Hello ,%s&lt;/h1&gt;'</span> % name</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(debug=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
