@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="关于Docker笔记 记录下个人学习Docker的使用和配置，均为入门级别，如有疏漏和错误的地方请指正。 笔记整理自:    http://www.runoob.com/docker/docker-tutorial.html    http://www.docker.org.cn/book/docker/what-is-docker-16.html">
+<meta name="description" content="关于Docker笔记 记录下个人学习Docker的使用和配置，均为入门级别，如有疏漏和错误的地方请指正。 笔记整理自: http://www.runoob.com/docker/docker-tutorial.htmlhttp://www.docker.org.cn/book/docker/what-is-docker-16.html Docker笔记内容  使用Dockerfile构建镜像">
 <meta name="keywords" content="Docker,容器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker笔记-安装配置">
-<meta property="og:url" content="https://cangbean.github.io/2018/09/05/dockerNote00/index.html">
+<meta property="og:title" content="Docker笔记-使用Dockerfile构建镜像">
+<meta property="og:url" content="https://cangbean.github.io/2018/09/22/dockerNote03/index.html">
 <meta property="og:site_name" content="记录">
-<meta property="og:description" content="关于Docker笔记 记录下个人学习Docker的使用和配置，均为入门级别，如有疏漏和错误的地方请指正。 笔记整理自:    http://www.runoob.com/docker/docker-tutorial.html    http://www.docker.org.cn/book/docker/what-is-docker-16.html">
+<meta property="og:description" content="关于Docker笔记 记录下个人学习Docker的使用和配置，均为入门级别，如有疏漏和错误的地方请指正。 笔记整理自: http://www.runoob.com/docker/docker-tutorial.htmlhttp://www.docker.org.cn/book/docker/what-is-docker-16.html Docker笔记内容  使用Dockerfile构建镜像">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T07:54:31.778Z">
+<meta property="og:updated_time" content="2018-09-22T09:59:04.218Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker笔记-安装配置">
-<meta name="twitter:description" content="关于Docker笔记 记录下个人学习Docker的使用和配置，均为入门级别，如有疏漏和错误的地方请指正。 笔记整理自:    http://www.runoob.com/docker/docker-tutorial.html    http://www.docker.org.cn/book/docker/what-is-docker-16.html">
+<meta name="twitter:title" content="Docker笔记-使用Dockerfile构建镜像">
+<meta name="twitter:description" content="关于Docker笔记 记录下个人学习Docker的使用和配置，均为入门级别，如有疏漏和错误的地方请指正。 笔记整理自: http://www.runoob.com/docker/docker-tutorial.htmlhttp://www.docker.org.cn/book/docker/what-is-docker-16.html Docker笔记内容  使用Dockerfile构建镜像">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://cangbean.github.io/2018/09/05/dockerNote00/"/>
+  <link rel="canonical" href="https://cangbean.github.io/2018/09/22/dockerNote03/"/>
 
 
 
 
 
-  <title>Docker笔记-安装配置 | 记录</title>
+  <title>Docker笔记-使用Dockerfile构建镜像 | 记录</title>
   
 
 
@@ -290,7 +290,7 @@
   
   
   <div class="post-block">
-	    <link itemprop="mainEntityOfPage" href="https://cangbean.github.io/2018/09/05/dockerNote00/">
+	    <link itemprop="mainEntityOfPage" href="https://cangbean.github.io/2018/09/22/dockerNote03/">
 
 	    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
 	      <meta itemprop="name" content="G.Bean">
@@ -307,7 +307,7 @@
 
 		
 		
-		  <h1 class="post-title" itemprop="name headline">Docker笔记-安装配置</h1>
+		  <h1 class="post-title" itemprop="name headline">Docker笔记-使用Dockerfile构建镜像</h1>
 		
 
 		<div class="post-meta">
@@ -319,8 +319,8 @@
 		      
 			<span class="post-meta-item-text">发表于</span>
 		      
-		      <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-05T14:31:13+08:00">
-			2018-09-05
+		      <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-22T17:54:43+08:00">
+			2018-09-22
 		      </time>
 		    
 
@@ -335,8 +335,8 @@
 		      
 			<span class="post-meta-item-text">更新于&#58;</span>
 		      
-		      <time title="更新于" itemprop="dateModified" datetime="2018-09-05T15:54:31+08:00">
-			2018-09-05
+		      <time title="更新于" itemprop="dateModified" datetime="2018-09-22T17:59:04+08:00">
+			2018-09-22
 		      </time>
 		    
 		  </span>
@@ -383,9 +383,9 @@
 			<span class="post-meta-item-icon">
 			  <i class="fa fa-comment-o"></i>
 			</span>
-			<a href="/2018/09/05/dockerNote00/#comments" itemprop="discussionUrl">
+			<a href="/2018/09/22/dockerNote03/#comments" itemprop="discussionUrl">
 			  <span class="post-comments-count disqus-comment-count"
-				data-disqus-identifier="2018/09/05/dockerNote00/" itemprop="commentCount"></span>
+				data-disqus-identifier="2018/09/22/dockerNote03/" itemprop="commentCount"></span>
 			</a>
 		      </span>
 		    
@@ -420,76 +420,88 @@
 	      
 		<p><strong>关于Docker笔记</strong></p>
 <p>记录下个人学习Docker的使用和配置，均为入门级别，如有疏漏和错误的地方请指正。</p>
-<p>笔记整理自:<br>    <a href="http://www.runoob.com/docker/docker-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-tutorial.html</a><br>    <a href="http://www.docker.org.cn/book/docker/what-is-docker-16.html" target="_blank" rel="noopener">http://www.docker.org.cn/book/docker/what-is-docker-16.html</a></p>
+<p>笔记整理自:</p>
+<p><a href="http://www.runoob.com/docker/docker-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-tutorial.html</a><br><a href="http://www.docker.org.cn/book/docker/what-is-docker-16.html" target="_blank" rel="noopener">http://www.docker.org.cn/book/docker/what-is-docker-16.html</a></p>
+<p><strong>Docker笔记内容</strong></p>
+<ul>
+<li>使用Dockerfile构建镜像</li>
+</ul>
 <a id="more"></a>
-<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><h4 id="1-根据要求安装相应内核的linux系统，本次测试试用了CentOS7-并将yum源更换为阿里源"><a href="#1-根据要求安装相应内核的linux系统，本次测试试用了CentOS7-并将yum源更换为阿里源" class="headerlink" title="1.根据要求安装相应内核的linux系统，本次测试试用了CentOS7,并将yum源更换为阿里源"></a>1.根据要求安装相应内核的linux系统，本次测试试用了CentOS7,并将yum源更换为阿里源</h4><pre><code>[root@gd ~]# uname -a
-Linux gd 3.10.0-123.el7.x86_64 #1 SMP Mon Jun 30 12:09:22 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
-</code></pre><h4 id="2-通过yum安装docker"><a href="#2-通过yum安装docker" class="headerlink" title="2.通过yum安装docker"></a>2.通过yum安装docker</h4><pre><code>[g@runoob ~]# sudo yum -y install docker-io
-</code></pre><h4 id="3-启动-Docker-后台服务"><a href="#3-启动-Docker-后台服务" class="headerlink" title="3.启动 Docker 后台服务"></a>3.启动 Docker 后台服务</h4><pre><code>[g@gd CentOS 7 x86_64]$ sudo service docker start
-Redirecting to /bin/systemctl start docker.service
-</code></pre><h4 id="4-镜像加速"><a href="#4-镜像加速" class="headerlink" title="4.镜像加速"></a>4.镜像加速</h4><p>国内后续拉取 Docker 镜像十分缓慢，我们可以需要配置加速器来解决，我使用的是网易的镜像地址：</p>
-<pre><code>http://hub-mirror.c.163.com。
-</code></pre><p>新版的Docker使用etc/docker/daemon.json（Linux）<br>或者<br>%programdata%\docker\config\daemon.json（Windows）<br>来配置 Daemon。</p>
-<p>请在该配置文件中加入（没有该文件的话，请先建一个）：</p>
-<pre><code>{
-  &quot;registry-mirrors&quot;: [&quot;http://hub-mirror.c.163.com&quot;]
-}
-</code></pre><p>Docker 官方提供的中国</p>
-<pre><code>https://registry.docker-cn.com
-</code></pre><p>七牛云加速器</p>
-<pre><code>https://reg-mirror.qiniu.com/
-</code></pre><p>重启docker服务</p>
-<pre><code>$ sudo systemctl daemon-reload
-$ sudo systemctl restart docker
-</code></pre><p>配置加速器之后，如果拉取镜像仍然十分缓慢，请手动检查加速器配置是否生效，在命令行执行docker info，如果从结果中看到了如下内容，说明配置成功。</p>
-<pre><code>Registry Mirrors:
-http://hub-mirror.c.163.com
-</code></pre><h4 id="5-运行一个web应用"><a href="#5-运行一个web应用" class="headerlink" title="5.运行一个web应用"></a>5.运行一个web应用</h4><p>前面我们运行的容器并没有一些什么特别的用处。接下来让我们尝试使用 docker 构建一个 web 应用程序。我们将在docker容器中运行一个 Python Flask 应用来运行一个web应用。</p>
-<pre><code>[root@gd yum.repos.d]# docker pull training/webapp
-[root@gd yum.repos.d]# docker run -d -P training/webapp python app.py
-</code></pre><p>-d:让容器在后台运行。<br>-P:将容器内部使用的网络端口映射到我们使用的主机上</p>
-<p>使用 docker ps 来查看我们正在运行的容器</p>
-<pre><code>[root@gd yum.repos.d]# docker ps
-CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS              PORTS                     NAMES
-734cf64ec67a        training/webapp     &quot;python app.py&quot;     About a minute ago   Up About a minute   0.0.0.0:32769-&gt;5000/tcp   modest_brattain
-[root@gd yum.repos.d]# 
-</code></pre><p>Docker 开放了 5000 端口（默认 Python Flask 端口）映射到主机端口 32769 上。我们也可以通过 -p 参数来设置不一样的端口：</p>
-<pre><code>runoob@runoob:~$ docker run -d -p 5000:5000 training/webapp python app.py
-</code></pre><h4 id="6-网络端口的快捷方式"><a href="#6-网络端口的快捷方式" class="headerlink" title="6.网络端口的快捷方式"></a>6.网络端口的快捷方式</h4><p>通过docker ps 命令可以查看到容器的端口映射，docker还提供了另一个快捷方式：docker port,使用 docker port 可以查看指定（ID或者名字）容器的某个确定端口映射到宿主机的端口号。<br>上面我们创建的web应用容器ID为:734cf64ec67a modest_brattain</p>
-<p>我可以使用docker port 734cf64ec67a 或docker port modest_brattain</p>
-<pre><code>[root@gd yum.repos.d]# docker port 734cf64ec67a
-5000/tcp -&gt; 0.0.0.0:32769
-[root@gd yum.repos.d]# docker port modest_brattain
-5000/tcp -&gt; 0.0.0.0:32769
-</code></pre><h4 id="7-查看WEB应用程序日志"><a href="#7-查看WEB应用程序日志" class="headerlink" title="7.查看WEB应用程序日志"></a>7.查看WEB应用程序日志</h4><p>docker logs [ID或者名字] 可以查看容器内部的标准输出。</p>
-<pre><code>[root@gd yum.repos.d]# docker logs modest_brattain 
- * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
-10.23.2.3 - - [03/Aug/2018 10:44:41] &quot;GET / HTTP/1.1&quot; 200 -
-10.23.2.3 - - [03/Aug/2018 10:44:41] &quot;GET /favicon.ico HTTP/1.1&quot; 404 --
-</code></pre><p>-f:让 docker logs 像使用 tail -f 一样来输出容器内部的标准输出。</p>
-<pre><code>[root@gd yum.repos.d]# docker logs modest_brattain  -f
- * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
-10.23.2.3 - - [03/Aug/2018 10:44:41] &quot;GET / HTTP/1.1&quot; 200 -
-10.23.2.3 - - [03/Aug/2018 10:44:41] &quot;GET /favicon.ico HTTP/1.1&quot; 404 -
-</code></pre><h4 id="8-查看WEB应用程序容器的进程"><a href="#8-查看WEB应用程序容器的进程" class="headerlink" title="8.查看WEB应用程序容器的进程"></a>8.查看WEB应用程序容器的进程</h4><p>我们还可以使用 docker top 来查看容器内部运行的进程</p>
-<pre><code>[root@gd yum.repos.d]# docker top modest_brattain 
-UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
-root                11111               11094               0                   18:42               ?                   00:00:00            python app.py
-[root@gd yum.repos.d]# 
-</code></pre><h4 id="9-检查WEB应用程序"><a href="#9-检查WEB应用程序" class="headerlink" title="9.检查WEB应用程序"></a>9.检查WEB应用程序</h4><p>使用 docker inspect 来查看Docker的底层信息。它会返回一个 JSON 文件记录着 Docker 容器的配置和状态信息。</p>
-<pre><code>[root@gd yum.repos.d]# docker inspect modest_brattain 
-</code></pre><h4 id="10-停止WEB应用容器"><a href="#10-停止WEB应用容器" class="headerlink" title="10.停止WEB应用容器"></a>10.停止WEB应用容器</h4><pre><code>[root@gd yum.repos.d]# docker stop modest_brattain 
-</code></pre><h4 id="11-重启WEB应用容器"><a href="#11-重启WEB应用容器" class="headerlink" title="11.重启WEB应用容器"></a>11.重启WEB应用容器</h4><p>已经停止的容器，我们可以使用命令 docker start 来启动。</p>
-<pre><code>[root@gd yum.repos.d]# docker start modest_brattain
-</code></pre><p>docker ps -l 查询最后一次创建的容器：</p>
-<pre><code>[root@gd yum.repos.d]# docker ps -l
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                     NAMES
-734cf64ec67a        training/webapp     &quot;python app.py&quot;     13 minutes ago      Up 41 seconds       0.0.0.0:32770-&gt;5000/tcp   modest_brattain
-</code></pre><h4 id="12-移除WEB应用容器"><a href="#12-移除WEB应用容器" class="headerlink" title="12.移除WEB应用容器"></a>12.移除WEB应用容器</h4><p>我们可以使用 docker rm 命令来删除不需要的容器</p>
-<pre><code>[root@gd yum.repos.d]# docker rm distracted_leavitt 
-distracted_leavitt
-</code></pre><p>移除所有退出的容器</p>
-<pre><code>[g@gd ~]$ sudo docker rm $(sudo docker container ls -f &quot;status=exited&quot; -q)
+<h2 id="0-构建镜像"><a href="#0-构建镜像" class="headerlink" title="0.构建镜像"></a>0.构建镜像</h2><p>使用命令 docker build，从零开始来创建一个新的镜像。先创建一个Dockerfile 文件，其中包含一组指令来告诉Docker 如何构建我们的镜像。</p>
+<pre><code>vim Dockerfile  
+</code></pre><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">FROM centos:6.7</span><br><span class="line">MAINTAINER Fisher "123test321"</span><br><span class="line"></span><br><span class="line">RUN /bin/echo 'root:123456' | chpasswd</span><br><span class="line">RUN useradd test</span><br><span class="line">RUN /bin/echo 'test:123456' | chpasswd</span><br><span class="line">RUN /bin/echo -e "LANG=\"en_US.UTF-8\"" &gt;/etc/default/local</span><br><span class="line">EXPOSE 22</span><br><span class="line">EXPOSE 80</span><br><span class="line">CMD /usr/sbin/sshd -D</span><br></pre></td></tr></table></figure>
+<p>每一个指令都会在镜像上创建一个新的层，每一个指令的前缀都必须是大写的。<br>第一条FROM，指定使用哪个镜像源<br>RUN 指令告诉docker 在镜像内执行命令，安装了什么。<br>然后，我们使用 Dockerfile 文件，通过 docker build 命令来构建一个镜像。</p>
+<h3 id="先拉去一个centos镜像"><a href="#先拉去一个centos镜像" class="headerlink" title="先拉去一个centos镜像"></a>先拉去一个centos镜像</h3><pre><code>[g@gd dockernote]$ sudo docker pull centos:6.7
+Trying to pull repository docker.io/library/centos ... 
+6.7: Pulling from docker.io/library/centos
+cbddbc0189a0: Pull complete 
+Digest: sha256:9587f36d043e0ab9ad0f4c17e3022c360d57b3b970299b3bf7ddd81f0248a60e
+Status: Downloaded newer image for docker.io/centos:6.7
+
+[g@gd dockernote]$ sudo docker images
+REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
+docker.io/centos            6.7                 f2e2f7b8308b        6 weeks ago         191 MB
+</code></pre><h3 id="现在根据Dockerfile文件进行构建"><a href="#现在根据Dockerfile文件进行构建" class="headerlink" title="现在根据Dockerfile文件进行构建"></a>现在根据Dockerfile文件进行构建</h3><pre><code>[g@gd dockernote]$ sudo docker build -t test/centos:6.7 .
+Sending build context to Docker daemon 2.048 kB
+Step 1/9 : FROM centos:6.7
+ ---&gt; f2e2f7b8308b
+Step 2/9 : MAINTAINER Fisher &quot;123test321&quot;
+ ---&gt; Running in 653b4e8dd6fe
+ ---&gt; e0f5b9d7da93
+Removing intermediate container 653b4e8dd6fe
+Step 3/9 : RUN /bin/echo &apos;root:123456&apos; | chpasswd
+ ---&gt; Running in 741d8f79bbe2
+
+ ---&gt; 711778d5ef16
+Removing intermediate container 741d8f79bbe2
+Step 4/9 : RUN useradd test
+ ---&gt; Running in f7c6041daad8
+
+ ---&gt; ccc50ae9098f
+Removing intermediate container f7c6041daad8
+Step 5/9 : RUN /bin/echo &apos;test:123456&apos; | chpasswd
+ ---&gt; Running in 78728cacc451
+
+ ---&gt; d64fba43a5bd
+Removing intermediate container 78728cacc451
+Step 6/9 : RUN /bin/echo -e &quot;LANG=\&quot;en_US.UTF-8\&quot;&quot; &gt;/etc/default/local
+ ---&gt; Running in 8684334383c5
+
+ ---&gt; 2fa584ad84a6
+Removing intermediate container 8684334383c5
+Step 7/9 : EXPOSE 22
+ ---&gt; Running in 6af3694a78a6
+ ---&gt; 783787fe5e2f
+Removing intermediate container 6af3694a78a6
+Step 8/9 : EXPOSE 80
+ ---&gt; Running in dfe88a5b0002
+ ---&gt; ce1afb89d5f4
+Removing intermediate container dfe88a5b0002
+Step 9/9 : CMD /usr/sbin/sshd -D
+ ---&gt; Running in 0f4f3ad0a2db
+ ---&gt; c792523d8886
+Removing intermediate container 0f4f3ad0a2db
+Successfully built c792523d8886
+</code></pre><p>参数说明</p>
+<ul>
+<li>-t ：指定要创建的目标镜像名</li>
+<li>.  ：Dockerfile 文件所在目录，可以指定Dockerfile 的绝对路径</li>
+</ul>
+<h3 id="查看构建完成的镜像"><a href="#查看构建完成的镜像" class="headerlink" title="查看构建完成的镜像"></a>查看构建完成的镜像</h3><pre><code>[g@gd dockernote]$ sudo docker images
+REPOSITORY                  TAG                 IMAGE ID            CREATED              SIZE
+test/centos                 6.7                 c792523d8886        About a minute ago   191 MB
+docker.io/centos            6.7                 f2e2f7b8308b        6 weeks ago          191 MB
+</code></pre><h3 id="使用新的镜像来创建容器"><a href="#使用新的镜像来创建容器" class="headerlink" title="使用新的镜像来创建容器"></a>使用新的镜像来创建容器</h3><pre><code>[g@gd dockernote]$ sudo docker run -it  test/centos:6.7  /bin/bash
+[root@391854bafeae /]# id test
+uid=500(test) gid=500(test) groups=500(test)
+[root@391854bafeae /]# 
+</code></pre><h2 id="1-设置镜像标签"><a href="#1-设置镜像标签" class="headerlink" title="1.设置镜像标签"></a>1.设置镜像标签</h2><p>使用 docker tag 命令，为镜像添加一个新的标签。此时镜像多一个标签。</p>
+<pre><code>[g@gd ~]$ sudo docker tag c792523d8886 test/centos:test
+[g@gd ~]$ sudo docker images
+REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
+test/centos                 6.7                 c792523d8886        About an hour ago   191 MB
+test/centos                 test                c792523d8886        About an hour ago   191 MB
+docker.io/centos            6.7                 f2e2f7b8308b        6 weeks ago         191 MB
 </code></pre>
 	      
 	    </div>
@@ -548,7 +560,7 @@ distracted_leavitt
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://cangbean.github.io/2018/09/05/dockerNote00/" title="Docker笔记-安装配置">https://cangbean.github.io/2018/09/05/dockerNote00/</a>
+    <a href="https://cangbean.github.io/2018/09/22/dockerNote03/" title="Docker笔记-使用Dockerfile构建镜像">https://cangbean.github.io/2018/09/22/dockerNote03/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -578,8 +590,8 @@ distracted_leavitt
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/28/test1/" rel="next" title="第一篇-测试下">
-                <i class="fa fa-chevron-left"></i> 第一篇-测试下
+              <a href="/2018/09/22/dockerNote02/" rel="next" title="Docker笔记-学习过程中遇到的问题00">
+                <i class="fa fa-chevron-left"></i> Docker笔记-学习过程中遇到的问题00
               </a>
             
           </div>
@@ -587,10 +599,6 @@ distracted_leavitt
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/11/flaskNote00/" rel="prev" title="Flask Web开发笔记-程序的基本结构">
-                Flask Web开发笔记-程序的基本结构 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -799,7 +807,7 @@ distracted_leavitt
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-根据要求安装相应内核的linux系统，本次测试试用了CentOS7-并将yum源更换为阿里源"><span class="nav-text">1.根据要求安装相应内核的linux系统，本次测试试用了CentOS7,并将yum源更换为阿里源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-通过yum安装docker"><span class="nav-text">2.通过yum安装docker</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-启动-Docker-后台服务"><span class="nav-text">3.启动 Docker 后台服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-镜像加速"><span class="nav-text">4.镜像加速</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-运行一个web应用"><span class="nav-text">5.运行一个web应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-网络端口的快捷方式"><span class="nav-text">6.网络端口的快捷方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-查看WEB应用程序日志"><span class="nav-text">7.查看WEB应用程序日志</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-查看WEB应用程序容器的进程"><span class="nav-text">8.查看WEB应用程序容器的进程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-检查WEB应用程序"><span class="nav-text">9.检查WEB应用程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-停止WEB应用容器"><span class="nav-text">10.停止WEB应用容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-重启WEB应用容器"><span class="nav-text">11.重启WEB应用容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-移除WEB应用容器"><span class="nav-text">12.移除WEB应用容器</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-构建镜像"><span class="nav-text">0.构建镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先拉去一个centos镜像"><span class="nav-text">先拉去一个centos镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#现在根据Dockerfile文件进行构建"><span class="nav-text">现在根据Dockerfile文件进行构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看构建完成的镜像"><span class="nav-text">查看构建完成的镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用新的镜像来创建容器"><span class="nav-text">使用新的镜像来创建容器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-设置镜像标签"><span class="nav-text">1.设置镜像标签</span></a></li></ol></div>
             
 
           </div>
@@ -1005,9 +1013,9 @@ distracted_leavitt
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://cangbean.github.io/2018/09/05/dockerNote00/';
-          this.page.identifier = '2018/09/05/dockerNote00/';
-          this.page.title = 'Docker笔记-安装配置';
+          this.page.url = 'https://cangbean.github.io/2018/09/22/dockerNote03/';
+          this.page.identifier = '2018/09/22/dockerNote03/';
+          this.page.title = 'Docker笔记-使用Dockerfile构建镜像';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://canbean.disqus.com/embed.js';
